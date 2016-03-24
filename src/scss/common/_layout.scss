@@ -1,0 +1,189 @@
+
+// Common - Layout
+//------------------------------------------------------------------------------
+
+/* Container */
+.container {
+  position: relative;
+  padding: 0 $container-padding;
+  margin: 0 auto;
+  background-color: $color-light-grey;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+
+}
+
+.site-name {
+  width: 200px;
+  height: 50px;
+
+  span {
+    background: url(../img/common/logo.png) no-repeat;
+  }
+}
+
+
+/* Navigation */
+.navigation {
+
+  li {
+
+  }
+
+  a {
+
+  }
+}
+
+/* Content */
+#content {
+    color: $color-dark-grey;
+    
+    .news-wrapper{
+        margin: 1.5em 0;
+        
+        .column{
+            width: 50%;
+            
+            &.left{
+                float: left;
+                border-right: dotted 1px;
+                
+                .header{
+                    @include rounded-left();
+                }
+            }
+            
+            &.right{
+                float: right;
+                border-right: solid 1px transparent;
+                
+                .header{
+                    @include rounded-right();
+                }
+            }
+            
+            .header{
+                background-color: $color-pink;
+                color: #fff;
+                padding: 1em;
+                text-transform: uppercase;
+            }
+            
+            .news{
+                background-color: #fff;
+                padding: 1em;
+                
+                h5{
+                    color: $color-darkest-grey;
+                }
+                
+                a.gallery img{
+                    max-width: 100%;
+                }
+                
+                .description{
+                    .more{
+                        color: $color-pink;
+                        margin-top: 1em;
+                        
+                        a{
+                            color: $color-pink;
+                        }
+                        
+                        &:after{
+                            @include arrow-ico();
+                            margin-left: 1em;
+                        }
+                    }
+                }
+                
+                div:first-of-type{
+                    padding: 0;
+                }
+                
+                div:last-of-type{
+                    padding-right: 0;
+                }
+            }
+        }
+        
+    }   // /.news-wrapper
+}
+
+/* Sidebar */
+.sidebar {
+    color: $color-dark-grey;
+    
+    .box{
+        @include rounded();
+        @include box-shadow(2px 2px 5px 0px $color-dark-grey);
+        background-color: #fff;
+        margin: 1.5em 0;
+        
+        .header{ 
+            border-bottom: dotted 1px;
+            padding: 0.7em 0 1em 1em;
+            
+            h4{
+                color: $color-pink;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+        
+        .content{
+            padding: 0.7em;
+            margin: 0.8em 0;
+            
+            p{
+                margin: 0 0 4px;
+            }
+            
+            .social-icons{
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 1em;
+                
+                span.fa{
+                    vertical-align: middle;
+                    
+                    &.fa-facebook-square{
+                        color: $color-fb;
+                    }
+                    
+                    &.fa-twitter-square{
+                        color: $color-twitter;
+                    }
+                    
+                    &.fa-google-plus-square{
+                        color: $color-dark-grey;
+                    }
+                }
+            }   // .social-icons
+            
+            ul.ico{
+                list-style: none;
+                padding-left: 0;
+                
+                li{
+                    padding-bottom: 1em;
+                    
+                    &:before{
+                        @include arrow-ico();
+                        margin-right: 1em;
+                    }
+                }
+            }
+        }   // .content
+    }   // .box
+   
+}
+
+/* Footer */
+.footer {
+  clear: both;
+}
